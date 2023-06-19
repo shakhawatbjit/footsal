@@ -26,3 +26,5 @@ databaseConnection(() => {
         console.log('Application is running on 3000');
     });
 })
+
+export default app;
