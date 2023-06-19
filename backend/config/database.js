@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 const databaseConnection = async (callback)=>{
     try {
-        const client = await mongoose.connect(process.env.DATABASE_URI);
+        mongoose.set("strictQuery", false);
+        const client = await mongoose.connect(process.env.DATABASE_URI,  {
+            useNewUrlParser: true, 
+            ssl: true,
+            sslValidate: false,});
         if (client) console.log("Database connected!");
         callback();
     } catch (error) {
