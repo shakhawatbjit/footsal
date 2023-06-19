@@ -1,0 +1,30 @@
+const { body } = require('express-validator'); 
+
+const validator = {
+    // Start Team Module Validation
+    addTeam: [
+        body('name').notEmpty().withMessage('Course name is required').isString().withMessage('Course name must be string!'), 
+    ],
+
+    editTeam: [
+        body('name').isString().withMessage('Course name must be string!'),      
+    ],
+    // End Team Module Validation
+
+     // Start Player Module Validation
+    addplayer: [
+        body('name').notEmpty().withMessage('Course name is required').isString().withMessage('Course name must be string!'),
+        body('role').notEmpty().withMessage('role is required'),
+        body('teamId').notEmpty().withMessage('Select Team is required'),   
+        body('description').isLength({ min: 25 }).withMessage('Description must be at least 25 characters'),               
+    ],
+
+    editPlayer: [
+        body('name').isString().withMessage('Course name must be string!'),  
+        body('description').isLength({ min: 25 }).withMessage('Description must be at least 25 characters'),      
+    ],
+    // End Player Module Validation 
+     
+};
+
+module.exports = validator;

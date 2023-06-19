@@ -1,0 +1,19 @@
+const mongoose = require('mongoose');
+
+// Schema for Team model
+const teamSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },  
+    logoLink: {
+        type: String,
+        required: false
+    }, 
+});
+
+const Team = mongoose.model('Team', teamSchema);
+
+module.exports = Team;
+
+ 
