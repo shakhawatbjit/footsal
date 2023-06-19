@@ -2,9 +2,12 @@
   "name": "footsal",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.js", 
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
-      "start": "nodemon index.js",
+      "start": "node index.js",
       "test": "node index.js"
   },
   "author": "epub",
